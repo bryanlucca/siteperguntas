@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário sobre Política</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #ddd 3px solid;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .question {
+            background: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .question h2 {
+            margin-top: 0;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            margin: 10px 0;
+        }
+        .options input {
+            margin-right: 10px;
+        }
+        .btn-submit {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn-submit:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Questionário sobre Política na Sociedade</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="question">
+            <h2>Pergunta 1: Como você avalia a importância da participação cidadã nas decisões políticas?</h2>
+            <ul class="options">
+                <li><input type="radio" name="q1" value="A"> Extremamente importante; é fundamental para garantir que a voz do povo seja ouvida e considerada.</li>
+                <li><input type="radio" name="q1" value="B"> Moderadamente importante; pode influenciar, mas muitas vezes as decisões são tomadas por uma minoria.</li>
+                <li><input type="radio" name="q1" value="C"> Pouco importante; decisões políticas geralmente são tomadas por políticos eleitos sem muita influência direta da população.</li>
+                <li><input type="radio" name="q1" value="D"> Irrelevante; a participação cidadã tem pouco impacto real nas decisões políticas.</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Pergunta 2: Qual é o impacto das redes sociais na política moderna?</h2>
+            <ul class="options">
+                <li><input type="radio" name="q2" value="A"> Muito positivo; elas promovem maior transparência e permitem uma comunicação direta entre políticos e cidadãos.</li>
+                <li><input type="radio" name="q2" value="B"> Moderadamente positivo; ajudam a aumentar a conscientização, mas também podem espalhar desinformação.</li>
+                <li><input type="radio" name="q2" value="C"> Negativo; contribuem para a polarização e a disseminação de notícias falsas.</li>
+                <li><input type="radio" name="q2" value="D"> Irrelevante; as redes sociais têm pouco impacto real na política comparado a métodos tradicionais.</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Pergunta 3: Qual é o papel dos partidos políticos na democracia?</h2>
+            <ul class="options">
+                <li><input type="radio" name="q3" value="A"> Essencial; eles estruturam o debate político, representam diferentes interesses e ajudam a formar governos.</li>
+                <li><input type="radio" name="q3" value="B"> Importante, mas não essencial; podem organizar e representar interesses, mas o sistema democrático pode funcionar sem eles.</li>
+                <li><input type="radio" name="q3" value="C"> Questionável; às vezes eles servem mais para interesses próprios do que para a democracia em si.</li>
+                <li><input type="radio" name="q3" value="D"> Desnecessário; os partidos políticos são um obstáculo para uma verdadeira representação democrática e podem ser substituídos por outros sistemas.</li>
+            </ul>
+        </div>
+        <button class="btn-submit" onclick="submitAnswers()">Enviar Respostas</button>
+    </div>
+
+    <script>
+        function submitAnswers() {
+            const answers = {
+                q1: document.querySelector('input[name="q1"]:checked')?.value,
+                q2: document.querySelector('input[name="q2"]:checked')?.value,
+                q3: document.querySelector('input[name="q3"]:checked')?.value
+            };
+
+            if (!answers.q1 || !answers.q2 || !answers.q3) {
+                alert('Por favor, responda todas as perguntas.');
+                return;
+            }
+
+            alert(`Respostas Enviadas:\n
+            Pergunta 1: ${answers.q1}\n
+            Pergunta 2: ${answers.q2}\n
+            Pergunta 3: ${answers.q3}`);
+        }
+    </script>
+</body>
+</html>
